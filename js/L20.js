@@ -15,7 +15,7 @@ const options = {
 
 options.makeTest();
 
-//todo: массив с ключами
+//todo: объект => массив с ключами
 console.log(Object.keys(options));
 console.log(Object.keys(options).length);
 
@@ -37,6 +37,8 @@ console.log(Object.keys(options).length);
 // for (let key in options) {
 //     console.log(`Свойство ${key} имеет значение ${options[key]}`);
 // }
+
+
 
 
 //? let counter = 0; // счётчик свойств

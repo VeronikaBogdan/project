@@ -14,4 +14,77 @@
 
 'use strict';
 
-// Код возьмите из предыдущего домашнего задания
+let numberOfFilms; 
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+    start: function() {
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+        while ( numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        }
+    },
+    rememberMyFilms: function() {
+        for (let i=1; i<3; i++) {
+            const q = prompt('Один из последних просмотренных фильмов?', "film"),
+                  w = +prompt('На сколько оцените его?', "result number");
+        
+            if (q != null && w != null && q != '' && w != '' && q.length < 50) {
+                personalMovieDB.movies[q] = w;
+                console.log('done');
+            } else {
+                console.log('error');
+                i--;
+            }
+        }
+    },
+    detectPersonalLevel: function() {
+        if ( personalMovieDB.count < 10 ) {
+            console.log("Просмотрено довольно мало фильмов");
+        } else if ( personalMovieDB.count >= 10 && personalMovieDB.count < 30 ){ 
+            console.log("Вы классический зритель");
+        } else if ( personalMovieDB.count >= 30 ) {
+            console.log("Вы киноман");
+        } else {
+            console.log("Произошла ошибка");
+        }
+    },
+    showMyDB: function(hidden) {
+        if ( !hidden ) {
+            console.log(personalMovieDB);   
+        } 
+    },
+    writeYourGenres: function() {
+        for ( let i = 1; i <= 3; i++ ) {
+            personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+        
+            while ( personalMovieDB.genres[i - 1] == '' || personalMovieDB.genres[i - 1] == null) {
+                personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+            }
+        } 
+
+        personalMovieDB.genres.forEach(function(item, i) {
+            console.log(`Любимый жанр #${i + 1} - это ${item}`);
+        });
+    },
+    toggleVisibleMyDB: function() {
+        if (personalMovieDB.privat === false) {
+            personalMovieDB.privat = true;
+        } else {
+            personalMovieDB.privat = false;
+        }
+    }
+};
+
+personalMovieDB.showMyDB(personalMovieDB.privat);
+personalMovieDB.toggleVisibleMyDB();
+
+console.log(personalMovieDB.privat);
+
+
+personalMovieDB.writeYourGenres();

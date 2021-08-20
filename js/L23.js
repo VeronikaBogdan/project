@@ -17,14 +17,20 @@ const soldier = {
         console.log("Hello");
     }
 };
-const john = {
-    health: 100
-};
+// const john = {
+//     health: 100
+// };
+
+const john = Object.create(soldier);
 
 
 // john.__proto__ = soldier; //!устаревший формат 
+
+
 Object.setPrototypeOf(john, soldier); // 1 arg -- КОТОРОМУ хочу назначиь прототип , 2 arg -- обект, прототип которого мы устанавливаем 
 //! прототип Джона от Солдата (выше строчкой)
+
+
 
 console.log(john.armor);
 john.sayHello();
