@@ -71,6 +71,41 @@ const personalMovieDB = {
         personalMovieDB.genres.forEach(function(item, i) {
             console.log(`Любимый жанр #${i + 1} - это ${item}`);
         });
+
+
+
+
+        //! There are 2 other ways to write the function according to the task:
+
+        // 1 way: 
+        // ------
+
+        // let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+
+        // if (genre === '' || genre == null) {
+        //     console.log('Вы ввели некорректные данные или не ввели их вовсе');
+        //     i--;
+        // } else {
+        //     personalMovieDB.genres[i - 1] = genre;
+        // } 
+        
+
+
+
+        // 2 way:
+        // ------
+        
+        // let genres = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase();
+
+        // if (genres === '' || genres == null) {
+        //     console.log('Вы ввели некорректные данные или не ввели их вовсе');
+        //     i--;
+        // } else {
+        //     personalMovieDB.genres = genres.split(', ');
+        //     personalMovieDB.genres.sort();
+        // } 
+
+
     },
     toggleVisibleMyDB: function() {
         if (personalMovieDB.privat === false) {
