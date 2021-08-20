@@ -8,6 +8,9 @@ console.log(b);
 console.log(a);
 
 
+
+
+
 const obj = {
     a: 5, 
     b: 1
@@ -27,7 +30,7 @@ console.log(obj);
 
 
 //todo: КАК СОЗДАТЬ КОПИЮ, А  НЕ ССЫЛКУ?  (объекты)
-//* 1 способ (созания копий)
+//* 1 способ (создания копий)
 
 function copy(mainObj) {
     let objCopy = {};
@@ -59,7 +62,7 @@ console.log(numbers);
 
 
 
-//* 2 способ (создания копий): Object asaign
+//* 2 способ (создания копий): Object assign
  
 const add = {
     d: 17,
@@ -96,30 +99,28 @@ console.log(oldArray);
 
 
 //* 4 способ (создания пов-ых копий) spread
-
+//! spread оператор -- слияние двух массивов
 const video = ['youtube', 'vimeo', 'rutube'], 
       blogs = ['wordpress', 'livejournal', 'blogger'],
       internet = [...video, ...blogs, 'vk', 'facebook'];
-
 console.log(internet);
 
 // ----------------------
-
+//! передача элементов массива в качестве аргументов функции
 function log(a, b, c) {
     console.log(a);
     console.log(b);
     console.log(c);
 }
+const num = [2, 5, 7]; 
+log(...num);
 
-const num = [2, 5, 7]; // например: источник, заглушка , автор
-
-console.log(...num);
 
 // --------------------------
-//* создание копий
+//* создание копий (массив)
 
 const array = ["a", "b"];
-const newAaarray = [...array];
+const newAaarray = [...array]; //old array is copied in new empty array
 
 newAaarray[0] = 'Excellent!';
 newAaarray[1] = 'Great!';
@@ -129,10 +130,10 @@ console.log(newAaarray); // [ 'Excellent!', 'Great!' ]
 
 
 // ---------------------
-//* создание копий
+//* создание копий  (объект)
 
 const q = {
     one: 1,
     two: 2
 };
-const newObj = {...q}
+const newObj = {...q};
