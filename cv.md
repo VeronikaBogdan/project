@@ -1,4 +1,4 @@
-# **Veronikgit a Bogdan**
+# **Veronika Bogdan**
 ### **Contacts**
 **Location:** Minsk, Belarus  
 **Phone:** +375(29)5623235  
