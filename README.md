@@ -1,1 +1,2 @@
-Udemy JavaScript course
+
+# project by Veronika Bogdan
